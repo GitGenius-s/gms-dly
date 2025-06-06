@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DlyController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,3 +20,4 @@ Route::get('/dashboard', function () {
 })->name('dashboard');
 
 
+Route::get('/list.dly-type', [DlyController::class, 'index'])->name('dly.type.list');

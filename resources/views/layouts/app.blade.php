@@ -102,14 +102,25 @@
             <img src="{{ asset('images/logo.jpeg') }}" alt="Logo" style="max-height: 60px; width: auto;">
         </div>
         <ul class="nav-links">
-            <li><a href="#" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
-            <li><a href="#"><i class="fas fa-clipboard-list"></i> Booking Reports</a></li>
-            <li><a href="#"><i class="fas fa-money-bill-wave"></i> TOPAY & COD Reports</a></li>
-            <li><a href="#"><i class="fas fa-sign-out-alt"></i> OUTGOING Reports</a></li>
-            <li><a href="#"><i class="fas fa-sign-in-alt"></i> INCOMING Reports</a></li>
-            <li><a href="#"><i class="fas fa-box-open"></i> HELD UP Reports</a></li>
-            <li><a href="#"><i class="fas fa-map-pin"></i> PINCODE</a></li>
+            {{-- <li class="nav-item" ><a href="/dashboard" class="active"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li> --}}
+            <li class="nav-item">
+                <a href="/dashboard" class="nav-link {{ request()->is('dashboard') ? 'active' : '' }}">
+                    <i class="fas fa-tachometer-alt"></i> Dashboard
+                </a>
+            </li>            
+            {{-- <li class="nav-item" ><a class="nav-link" href="/list.dly-type"><i class="fas fa-clipboard-list"></i> Booking Reports</a></li> --}}
+            <li class="nav-item">
+                <a href="/list.dly-type" class="nav-link {{ request()->is('list.dly-type') ? 'active' : '' }}">
+                    <i class="fas fa-clipboard-list"></i> Listing Delivery Types
+                </a>
+            </li>
+            <li class="nav-item" ><a class="nav-link" href="#"><i class="fas fa-money-bill-wave"></i> TOPAY & COD Reports</a></li>
+            <li class="nav-item" ><a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i> OUTGOING Reports</a></li>
+            <li class="nav-item" ><a class="nav-link" href="#"><i class="fas fa-sign-in-alt"></i> INCOMING Reports</a></li>
+            <li class="nav-item" ><a class="nav-link" href="#"><i class="fas fa-box-open"></i> HELD UP Reports</a></li>
+            <li class="nav-item" ><a class="nav-link" href="#"><i class="fas fa-map-pin"></i> PINCODE</a></li>
         </ul>
+        {{-- @yield('content') --}}
     </div>
     
     <!-- NEW toggle button placed after sidebar -->
@@ -120,7 +131,7 @@
     <div class="main-content" id="mainContent">
         <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm mb-4">
             <div class="container-fluid">
-                <span class="navbar-brand">Dashboard1</span>
+                <span class="navbar-brand">Listing</span>
             </div>
         </nav>
 
